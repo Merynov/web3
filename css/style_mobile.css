@@ -1,7 +1,3 @@
-/* =========================
-   Mobile version — Variant 2
-   Adapted for iPhone 15 Pro Max
-   ========================= */
 
 * {
   box-sizing: border-box;
@@ -87,3 +83,4 @@ body {
     font-weight: bold;
   }
 }
+
