@@ -1,3 +1,8 @@
+/* =========================
+   Mobile version — Variant 2
+   Adapted for iPhone 15 Pro Max
+   ========================= */
+
 * {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
@@ -5,36 +10,80 @@
 
 body {
   margin: 0;
+  background: #fff;
 }
 
+/* Контейнер */
 .container {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
+  display: grid;
   min-height: 100vh;
+  border: 2px solid black;
+
+  /* Сохраняем логику ПК-версии */
+  grid-template-columns: 22% 1fr 22%;
+  grid-template-rows: 70px 1fr 1fr 70px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main box4"
+    "sidebar main box5"
+    "sidebar footer footer";
 }
 
+/* Общие стили блоков */
 .block {
   border: 1px solid black;
-  padding: 15px;
+  padding: 10px;
+  font-size: 14px;
 }
 
-.header, .footer {
+/* Цвета и области */
+.header {
+  grid-area: header;
   background: #cfe2f3;
 }
 
 .sidebar {
+  grid-area: sidebar;
   background: #e2f0d9;
 }
 
 .main {
+  grid-area: main;
   background: #ffffff;
 }
 
 .box4 {
+  grid-area: box4;
   background: #e2f0d9;
 }
 
 .box5 {
+  grid-area: box5;
   background: #fce5cd;
+}
+
+.footer {
+  grid-area: footer;
+  background: #cfe2f3;
+}
+
+/* =========================
+   Адаптация именно под iPhone 15 Pro Max
+   ========================= */
+@media (max-width: 440px) {
+
+  .container {
+    grid-template-columns: 24% 1fr 24%;
+    grid-template-rows: 60px 1fr 1fr 60px;
+  }
+
+  .block {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .header,
+  .footer {
+    font-weight: bold;
+  }
 }
